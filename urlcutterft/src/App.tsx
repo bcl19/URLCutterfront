@@ -1,7 +1,7 @@
+import {RoutesApp} from "@/routes/RoutesApp"
 const App = () => {
     return (
-    <h1>OLá mundo </h1>
- )
-
+    <RoutesApp/>
+)
 }
 export default App
