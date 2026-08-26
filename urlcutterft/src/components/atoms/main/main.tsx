@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLoading } from "@/hooks/useLoading";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const features = [
   {
@@ -51,7 +52,7 @@ export const Main = () => {
   const [shortUrl, setShortUrl] = useState("");
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
@@ -70,6 +71,7 @@ export const Main = () => {
       await runWithLoading(async () => {
         await new Promise((resolve) => setTimeout(resolve, 800));
         setShortUrl(shortenUrl(parsed.href));
+        navigate("/result");
       });
     } catch {
       setError("Informe uma URL válida. Ex: https://exemplo.com/pagina");
