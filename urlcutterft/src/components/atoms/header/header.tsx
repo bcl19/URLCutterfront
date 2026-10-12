@@ -51,15 +51,12 @@ export const Header = () => {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button
-            variant="ghost"
-            className="text-stone-300 hover:bg-white/5 hover:text-white"
-          >
-            Entrar
-          </Button>
+          <Link 
+            to="/result">
           <Button className="bg-lime-400 text-stone-950 hover:bg-lime-300">
-            Encurtar URL
+            Encurtar URL  
           </Button>
+          </Link>
         </div>
 
         <button
@@ -102,9 +99,8 @@ export const Header = () => {
           <div className="mt-3 flex flex-col gap-2 border-t border-white/8 pt-4">
             <Button
               variant="outline"
-              className="w-full border-white/15 bg-transparent text-stone-200 hover:bg-white/5"
-            >
-              Entrar
+              className="w-full border-white/15 bg-transparent text-stone-200 hover:bg-white/5">
+            Entrar
             </Button>
             <Button className="w-full bg-lime-400 text-stone-950 hover:bg-lime-300">
               Encurtar URL
